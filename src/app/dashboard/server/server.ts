@@ -9,7 +9,9 @@ import { Component, signal } from '@angular/core';
 export class Server {
   currentStatus = signal<'online' | 'offline' | 'unknown'>('offline');
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     setInterval(() => {
       const rnd = Math.random();
       if (rnd < 0.5) {
